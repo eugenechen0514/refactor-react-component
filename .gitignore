@@ -1,0 +1,15 @@
+# node
+node_modules
+
+# idea
+.idea
+
+# OS
+.DS_Store
+
+# test
+*.snap
+
+# build
+build
+
