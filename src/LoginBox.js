@@ -34,14 +34,15 @@ class LoginBox extends Component {
     }
     render() {
         const {username, password} = this.state;
+        const {usernameLabel, passwordLabel} = this.props;
         return (
             <div>
                 <h2>登入</h2>
                 <div>
-                    名稱: <input value={username} onChange={this.__handleChangeUsername} />
+                    {usernameLabel}: <input value={username} onChange={this.__handleChangeUsername} />
                 </div>
                 <div>
-                    密碼: <input value={password} onChange={this.__handleChangePassword} />
+                    {passwordLabel}: <input value={password} onChange={this.__handleChangePassword} />
                 </div>
                 <button onClick={this.__handleClickButton}>送出</button>
             </div>
@@ -51,6 +52,8 @@ class LoginBox extends Component {
 
 LoginBox.propTypes = {
     onClickButton: PropTypes.func,
+    usernameLabel: PropTypes.string.isRequired,
+    passwordLabel: PropTypes.string.isRequired,
 };
 
 LoginBox.defaultProps = {

@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <LoginBox onClickButton={console.log} />
+        <LoginBox onClickButton={console.log} usernameLabel={'名稱'} passwordLabel={'密碼'} />
       </div>
     );
   }
