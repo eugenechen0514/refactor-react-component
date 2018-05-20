@@ -33,19 +33,8 @@ class LoginBox extends Component {
         onClickButton(this.state);
     }
     render() {
-        const {username, password} = this.state;
-        const {usernameLabel, passwordLabel} = this.props;
         return (
-            <div>
-                <h2>登入</h2>
-                <div>
-                    {usernameLabel}: <input value={username} onChange={this.__handleChangeUsername} />
-                </div>
-                <div>
-                    {passwordLabel}: <input value={password} onChange={this.__handleChangePassword} />
-                </div>
-                <button onClick={this.__handleClickButton}>送出</button>
-            </div>
+            <LoginBox {...this.props} {...this.state} />
         );
     }
 }
