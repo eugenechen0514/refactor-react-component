@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import LoginBox from './LoginBox';
 
-class LoginBox extends Component {
+class LoginBoxContainer extends Component {
     constructor(props) {
         super(props);
         this.__handleChangeUsername = this.__handleChangeUsername.bind(this);
@@ -39,13 +40,13 @@ class LoginBox extends Component {
     }
 }
 
-LoginBox.propTypes = {
+LoginBoxContainer.propTypes = {
     onClickButton: PropTypes.func,
     usernameLabel: PropTypes.string.isRequired,
     passwordLabel: PropTypes.string.isRequired,
 };
 
-LoginBox.defaultProps = {
+LoginBoxContainer.defaultProps = {
     onClickButton: () => {},
 };
-export default LoginBox;
+export default LoginBoxContainer;
