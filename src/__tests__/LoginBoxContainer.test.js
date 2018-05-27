@@ -1,8 +1,8 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 import LoginBoxContainer from '../LoginBoxContainer';
-const _mount = mount;
+const _mount = shallow;
 
 function setup(props = {}) {
     const wrapper = _mount(<LoginBoxContainer usernameLabel={'名稱'} passwordLabel={'密碼'} {...props} />);
