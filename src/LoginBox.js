@@ -4,16 +4,11 @@ import PropTypes from 'prop-types';
 class LoginBox extends Component {
     constructor(props) {
         super(props);
-        this.__handleClickButton = this.__handleClickButton.bind(this);
-    }
-    __handleClickButton() {
-        const {onClickButton} = this.props;
-        onClickButton(this.props);
     }
     render() {
         const {username, password} = this.props;
         const {usernameLabel, passwordLabel} = this.props;
-        const {onChangeUsername, onChangePassword} = this.props;
+        const {onChangeUsername, onChangePassword, onClickButton} = this.props;
         return (
             <div>
                 <h2>登入</h2>
@@ -23,7 +18,7 @@ class LoginBox extends Component {
                 <div>
                     {passwordLabel}: <input value={password} onChange={onChangePassword} />
                 </div>
-                <button onClick={this.__handleClickButton}>送出</button>
+                <button onClick={onClickButton}>送出</button>
             </div>
         );
     }
