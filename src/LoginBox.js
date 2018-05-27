@@ -6,7 +6,7 @@ class LoginBox extends Component {
         super(props);
     }
     render() {
-        const {username, password} = this.props;
+        const {username, password, message} = this.props;
         const {usernameLabel, passwordLabel} = this.props;
         const {onChangeUsername, onChangePassword, onClickButton} = this.props;
         return (
@@ -18,6 +18,7 @@ class LoginBox extends Component {
                 <div>
                     {passwordLabel}: <input value={password} onChange={onChangePassword} />
                 </div>
+                <div style={{color: 'red'}}>{message}</div>
                 <button onClick={onClickButton}>送出</button>
             </div>
         );
@@ -28,6 +29,7 @@ LoginBox.propTypes = {
     onClickButton: PropTypes.func,
     usernameLabel: PropTypes.string.isRequired,
     passwordLabel: PropTypes.string.isRequired,
+    message: PropTypes.string,
     username: PropTypes.string,
     password: PropTypes.string.isRequired,
     onChangeUsername: PropTypes.func,
@@ -40,5 +42,6 @@ LoginBox.defaultProps = {
     onChangePassword: () => {},
     username: '',
     password: '',
+    message: '',
 };
 export default LoginBox;
