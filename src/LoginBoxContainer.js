@@ -35,7 +35,10 @@ class LoginBoxContainer extends Component {
     }
     render() {
         return (
-            <LoginBox {...this.props} {...this.state} />
+            <LoginBox {...this.props} {...this.state}
+                      onChangePassword={this.__handleChangePassword}
+                      onChangeUsername={this.__handleChangeUsername}
+                      onClickButton={this.__handleClickButton} />
         );
     }
 }
