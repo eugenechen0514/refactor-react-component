@@ -18,6 +18,11 @@ test('snapshot', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('<LoginBoxContainer /> should have validation property with default value', () => {
+    const {wrapper} = setup();
+    expect(wrapper.prop('validation')).not.toBeUndefined();
+});
+
 test('withValidation() should be a function', () => {
     expect(typeof withValidation).toBe('function');
 });

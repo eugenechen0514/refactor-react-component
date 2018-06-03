@@ -51,12 +51,14 @@ class LoginBoxContainer extends Component {
 }
 
 LoginBoxContainer.propTypes = {
+    validation: PropTypes.func,
     onClickButton: PropTypes.func,
     usernameLabel: PropTypes.string.isRequired,
     passwordLabel: PropTypes.string.isRequired,
 };
 
 LoginBoxContainer.defaultProps = {
+    validation: __validUsername, // 不提供就用原來的驗証
     onClickButton: () => {},
 };
 export default LoginBoxContainer;
