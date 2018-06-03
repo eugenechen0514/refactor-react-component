@@ -21,8 +21,9 @@ class LoginBoxContainer extends Component {
     }
 
     __handleChangeUsername(event) {
+        const {validation} = this.props;
         const value = event.target.value;
-        const valid = __validUsername(value);
+        const valid = validation(value);
         this.setState({
             username: value,
             message: valid ? '' : 'invalid'
