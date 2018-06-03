@@ -69,13 +69,13 @@ function withValidation(validationFunction) {
     if(typeof validationFunction !== 'function') {
         throw new Error('validationFunction should be a function.')
     }
-    return function(Component){
+    return function(WrappedComponent){
         return class extends Component {
             constructor(props) {
                 super(props);
             }
             render(){
-                return <Component validation={validationFunction} {...this.props} />;
+                return <WrappedComponent validation={validationFunction} {...this.props} />;
             }
         }
     } ;
