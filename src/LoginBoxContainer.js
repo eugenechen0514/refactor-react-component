@@ -60,3 +60,21 @@ LoginBoxContainer.defaultProps = {
     onClickButton: () => {},
 };
 export default LoginBoxContainer;
+
+
+function withValidation(validationFunction) {
+    if(typeof validationFunction !== 'function') {
+        throw new Error('validationFunction should be a function.')
+    }
+    return function(Component){
+        return class extends Component {
+            constructor(props) {
+                super(props);
+            }
+            render(){
+                return <Component validation={validationFunction} {...this.props} />;
+            }
+        }
+    } ;
+}
+export　{withValidation}
