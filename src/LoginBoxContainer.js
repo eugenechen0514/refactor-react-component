@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LoginBox from './LoginBox';
 
+function __validUsername(username) {
+    return String(username).length > 3
+}
+
 class LoginBoxContainer extends Component {
     constructor(props) {
         super(props);
@@ -12,13 +16,16 @@ class LoginBoxContainer extends Component {
         this.state = {
             username: '',
             password: '',
+            message: '',
         };
     }
 
     __handleChangeUsername(event) {
         const value = event.target.value;
+        const valid = __validUsername(value);
         this.setState({
-            username: value
+            username: value,
+            message: valid ? '' : 'invalid'
         });
     }
 
